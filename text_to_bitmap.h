@@ -5,14 +5,14 @@
 #include <fstream>
 #include <sstream>
 #include <filesystem>
+#include <cmath>
 
 #include "Matrix.h"
 #include "Image.h"
 
 using namespace std;
 
-void text_conversion(string file_name);
-void create_image(Image *img, ifstream& is, string file_name);
-void set_pixel(Image *img, int r, int g, int b);
+void text_conversion(string file_name, ostream& os);
+int create_image(Image *img, string file_name);
 
 #endif
