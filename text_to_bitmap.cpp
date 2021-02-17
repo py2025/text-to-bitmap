@@ -26,12 +26,9 @@ void text_conversion(string file_name, ostream& os) {
     Pixel p;
     for(int i = getImgHeight(img) - 1; i >= 0; i--){
         for(int j = 0; j < getImgWidth(img); j++){
-            if(!fin.eof()) fin >> b;
-            else b = '0';
-            if(!fin.eof()) fin >> g;
-            else g = '0';
-            if(!fin.eof()) fin >> r;
-            else r = '0';
+            if(!fin.eof()) fin >> b; else b = '\0';
+            if(!fin.eof()) fin >> g; else g = '\0';
+            if(!fin.eof()) fin >> r; else r = '\0';
 
             p = {(int) r, (int) g, (int) b};
 
