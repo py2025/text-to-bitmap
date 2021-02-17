@@ -3,6 +3,10 @@
 
 #include "Matrix.h"
 
+#include <fstream>
+
+using namespace std;
+
 struct Pixel {
     int r;
     int g;
@@ -17,12 +21,16 @@ struct Image {
     Matrix pixelB;
 };
 
-void writePixel();
+void writePixel(Image* img, Pixel pxl, int row, int column);
 
-Pixel pullPixel();
+Pixel pullPixel(Image* img, int row, int column);
 
-void image_init(int width, int height);
+void image_init(Image* img, int width, int height);
 
-int getImgHeight(Image img);
+int getImgHeight(Image* img);
+
+int getImgWidth(Image* img);
+
+int printImg(Image* img, ostream& os);
 
 #endif
