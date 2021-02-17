@@ -13,5 +13,7 @@
 using namespace std;
 
 void text_conversion(string file_name, ostream& os);
-void create_image(Image *img, string file_name);
+void create_image(Image *img, long size);
+long count_characters(istream& is);
+
 #endif
