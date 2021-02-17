@@ -2,20 +2,19 @@
 
 namespace fs = std::filesystem;
 
-int create_image(Image *img, string file_name) {
+void create_image(Image *img, string file_name) {
     fs::path p {file_name};
     int size = fs::file_size(p);
     int leg = sqrt(size) + 0.5;
     image_init(img, leg, leg);
     Image_fill(img, Pixel{0, 0, 0});
-    return leg;
 }
 
 void text_conversion(string file_name, ostream& os) {
     Image *img = new Image; 
     ifstream fin; 
     fin.open(file_name); 
-    int size = create_image(img, file_name);
+    create_image(img, file_name);
     Pixel p;
     for(int i = getImgHeight(img) - 1; i >= 0; i--){
         for(int j = 0; j < getImgWidth(img); j++){

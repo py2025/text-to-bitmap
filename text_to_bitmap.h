@@ -13,6 +13,5 @@
 using namespace std;
 
 void text_conversion(string file_name, ostream& os);
-int create_image(Image *img, string file_name);
-
+void create_image(Image *img, string file_name);
 #endif

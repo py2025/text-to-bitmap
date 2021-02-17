@@ -31,7 +31,7 @@ int getImgHeight(Image* img);
 
 int getImgWidth(Image* img);
 
-int printImg(Image* img, ostream& os);
+void printImg(Image* img, ostream& os);
 
 void Image_fill(Image *img, Pixel p);
 
