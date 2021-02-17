@@ -1,9 +1,7 @@
 #include "text_to_bitmap.h"
 
 void create_image(Image *img, long size) {
-    int leg = sqrt(size)/3 + 1;
-    cout << "sqrt(size) = " << sqrt(size)/3;
-    cout << "\nleg = " << leg << endl;
+    int leg = sqrt(size/3) + 1;
     image_init(img, leg, leg);
     Image_fill(img, Pixel{0, 0, 0});
 }
@@ -14,7 +12,7 @@ long count_characters(istream& is) {
     while (is >> c) {
         ++total;
     }
-    cout << "The total char count is: " << total << endl;
+    cout << total << endl;
     return total;
 }
 
