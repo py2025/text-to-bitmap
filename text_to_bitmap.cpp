@@ -8,8 +8,8 @@ void create_image(Image *img, long size) {
 
 long count_characters(istream& is) {
     long total = 0;
-    char c;
-    while (is >> c) {
+    while (!is.eof()) {
+        is.get();
         ++total;
     }
     return total;
