@@ -16,3 +16,10 @@ int Matrix_width(Matrix *mat) {
 int Matrix_height(Matrix *mat) {
     return mat->height;
 }
+
+void Matrix_fill(Matrix *mat, int value) {
+    int *end = mat->data + Matrix_width(mat) * Matrix_height(mat);
+    for (int *i = mat->data; i < end; ++i) {
+        *i = value;
+    }
+}

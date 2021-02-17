@@ -40,3 +40,9 @@ int printImg(Image *img, ostream& os){
         os << "\n";
     }
 }
+
+void Image_fill(Image *img, Pixel p) {
+    Matrix_fill(&(img->pixelR), p.r);
+    Matrix_fill(&(img->pixelG), p.g);
+    Matrix_fill(&(img->pixelB), p.b);
+}
