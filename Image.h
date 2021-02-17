@@ -33,6 +33,6 @@ int getImgWidth(Image* img);
 
 int printImg(Image* img, ostream& os);
 
-void fillImage(Image *img, Pixel p);
+void Image_fill(Image *img, Pixel p);
 
 #endif

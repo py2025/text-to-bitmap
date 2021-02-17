@@ -7,6 +7,7 @@ int create_image(Image *img, string file_name) {
     int size = fs::file_size(p);
     int leg = sqrt(size) + 0.5;
     image_init(img, leg, leg);
+    Image_fill(img, Pixel{0, 0, 0});
     return leg;
 }
 
@@ -23,4 +24,5 @@ void text_conversion(string file_name, ostream& os) {
         else 0 >> b;
     }
     printImg(img, os);
+    fin.close();
 }
