@@ -1,6 +1,8 @@
 #ifndef __IMAGE_H_
 #define __IMAGE_H_
 
+#include "Matrix.h"
+
 struct Pixel {
     int r;
     int g;
@@ -10,14 +12,17 @@ struct Pixel {
 struct Image {
     int width;
     int height;
-    Matrix
-}
+    Matrix pixelR;
+    Matrix pixelG;
+    Matrix pixelB;
+};
+
 void writePixel();
 
 Pixel pullPixel();
 
 void image_init(int width, int height);
 
-int getImgHeight()
+int getImgHeight(Image img);
 
 #endif
