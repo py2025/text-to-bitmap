@@ -12,7 +12,6 @@ long count_characters(istream& is) {
     while (is >> c) {
         ++total;
     }
-    cout << total << endl;
     return total;
 }
 
@@ -23,15 +22,19 @@ void text_conversion(string file_name, ostream& os) {
     create_image(img, count_characters(fin));
     fin.close();
     fin.open(file_name);
+    char r, g, b;
     Pixel p;
     for(int i = getImgHeight(img) - 1; i >= 0; i--){
         for(int j = 0; j < getImgWidth(img); j++){
-            if(!fin.eof()) fin >> p.b;
-            else p.b = 0;
-            if(!fin.eof()) fin >> p.g;
-            else p.g = 0;
-            if(!fin.eof()) fin >> p.r;
-            else p.r = 0;
+            if(!fin.eof()) fin >> b;
+            else b = '0';
+            if(!fin.eof()) fin >> g;
+            else g = '0';
+            if(!fin.eof()) fin >> r;
+            else r = '0';
+
+            p = {(int) r, (int) g, (int) b};
+
             writePixel(img, p, i, j);
         }
     }
