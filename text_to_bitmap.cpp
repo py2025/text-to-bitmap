@@ -1,4 +1,4 @@
-#include "text_to_bitmap.h";
+#include "text_to_bitmap.h"
 
 namespace fs = std::filesystem;
 
@@ -16,13 +16,19 @@ void text_conversion(string file_name, ostream& os) {
     ifstream fin; 
     fin.open(file_name); 
     int size = create_image(img, file_name);
-    int r, g, b;
-    while(fin >> r){
-        if(!fin.eof()) fin >> g;
-        else 0 >> g;
-        if(!fin.eof()) fin >> b;
-        else 0 >> b;
+    Pixel p;
+    for(int i = getImgHeight(img) - 1; i >= 0; i--){
+        for(int j = 0; j < getImgWidth(img); j++){
+            if(!fin.eof()) fin >> p.b;
+            else p.b = 0;
+            if(!fin.eof()) fin >> p.g;
+            else p.g = 0;
+            if(!fin.eof()) fin >> p.r;
+            else p.r = 0;
+            writePixel(img, p, i, j);
+        }
     }
     printImg(img, os);
     fin.close();
+    delete img;
 }
