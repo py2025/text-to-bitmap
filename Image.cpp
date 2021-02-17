@@ -30,5 +30,13 @@ int getImgWidth(Image *img){
 }
 
 int printImg(Image *img, ostream& os){
-    
+    os << "P3\n" << getImgWidth(img) << " " << getImgHeight(img) << "\n";
+    for (int i = 0; i < getImgHeight(img); ++i) {
+        for (int j = 0; j < getImgWidth(img); ++j) {
+            os << *Matrix_at(&(img->pixelR), i, j) << " ";
+            os << *Matrix_at(&(img->pixelG), i, j) << " ";
+            os << *Matrix_at(&(img->pixelB), i, j) << " ";
+        }
+        os << "\n";
+    }
 }
