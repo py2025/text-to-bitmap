@@ -22,15 +22,15 @@ void text_conversion(string file_name, ostream& os) {
     create_image(img, count_characters(fin));
     fin.close();
     fin.open(file_name);
-    char r, g, b;
+    int r, g, b;
     Pixel p;
     for(int i = getImgHeight(img) - 1; i >= 0; i--){
         for(int j = 0; j < getImgWidth(img); j++){
-            if(!fin.eof()) fin >> b; else b = '\0';
-            if(!fin.eof()) fin >> g; else g = '\0';
-            if(!fin.eof()) fin >> r; else r = '\0';
+            if(!fin.eof()) b = fin.get(); else b = 32;
+            if(!fin.eof()) g = fin.get(); else g = 32;
+            if(!fin.eof()) r = fin.get(); else r = 32;
 
-            p = {(int) r, (int) g, (int) b};
+            p = {r, g, b};
 
             writePixel(img, p, i, j);
         }
