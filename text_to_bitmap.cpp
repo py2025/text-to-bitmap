@@ -3,7 +3,7 @@
 void create_image(Image *img, long size) {
     int leg = sqrt(size/3) + 1;
     image_init(img, leg, leg);
-    Image_fill(img, Pixel{0, 0, 0});
+    Image_fill(img, Pixel{32, 32, 32});
 }
 
 long count_characters(istream& is) {
@@ -30,7 +30,7 @@ void text_conversion(string file_name, ostream& os) {
             if(!fin.eof()) g = fin.get(); else g = 32;
             if(!fin.eof()) r = fin.get(); else r = 32;
 
-            p = {r, g, b};
+            p = {r >= 0 ? r : 32, g >= 0 ? g : 32, b >= 0 ? b : 32};
 
             writePixel(img, p, i, j);
         }
@@ -38,4 +38,8 @@ void text_conversion(string file_name, ostream& os) {
     printImg(img, os);
     fin.close();
     delete img;
+}
+
+void ppm_to_bmp24(ostream& os, istream& is) {
+
 }
