@@ -8,6 +8,7 @@
 *.jpeg
 *.jpg
 *.png
+*.bmp
 
 #vscode lol
 .vscode/
