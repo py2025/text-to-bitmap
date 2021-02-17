@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #ifndef __IMAGE_H_
 #define __IMAGE_H_
 
@@ -24,5 +25,11 @@ Pixel pullPixel();
 void image_init(int width, int height);
 
 int getImgHeight(Image img);
+=======
+#ifndef __IMAGE_H__
+#define __IMAGE_H__
+
+
+>>>>>>> Stashed changes
 
 #endif
