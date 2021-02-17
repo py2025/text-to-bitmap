@@ -1,0 +1,13 @@
+#compiled object files
+*.o
+*.obj
+
+#text and image files
+*.txt
+*.ppm
+*.jpeg
+*.jpg
+*.png
+
+#vscode lol
+.vscode/
