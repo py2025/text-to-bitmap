@@ -1,8 +1,8 @@
 #ifndef __MATRIX_H__
 #define __MATRIX_H__
 
-static const int MAX_MATRIX_WIDTH = 500;
-static const int MAX_MATRIX_HEIGHT = 500;
+static const int MAX_MATRIX_WIDTH = 5000;
+static const int MAX_MATRIX_HEIGHT = 5000;
 struct Matrix {
     int width;
     int height;

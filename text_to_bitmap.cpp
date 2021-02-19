@@ -16,8 +16,8 @@ long count_characters(istream& is) {
 }
 
 void text_conversion(string file_name, ostream& os) {
-    Image *img = new Image; 
-    ifstream fin; 
+    Image *img = new Image;
+    ifstream fin;
     fin.open(file_name);
     create_image(img, count_characters(fin));
     fin.close();
@@ -38,8 +38,4 @@ void text_conversion(string file_name, ostream& os) {
     printImg(img, os);
     fin.close();
     delete img;
-}
-
-void ppm_to_bmp24(ostream& os, istream& is) {
-
 }

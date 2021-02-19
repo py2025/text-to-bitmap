@@ -7,4 +7,5 @@ int main(int argc, char* argv[]){
     ofstream output;
     output.open(argv[2]);
     text_conversion(argv[1], output);
+    output.close();
 }
